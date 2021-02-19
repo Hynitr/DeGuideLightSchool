@@ -4,7 +4,14 @@
   <head>
     <title>De-Guide Light Schools | Home</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <meta name="description" content="De-Guide Light Schools | Home">
+    <meta name="keywords" content="De-Guide Light School is an Educational Institution whose core values are Child Centeredness, Honesty, Discipline and Service to All">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="theme-color" content="#01d28e"> 
+    <link rel="manifest" href="manifest.json">
 
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
 
@@ -286,9 +293,7 @@
           <div class="col-lg-4 col-md-6">
             
             <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
-              </div>  
+              
               
               <blockquote class="quote_39823">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
@@ -300,9 +305,7 @@
             
             
             <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
-              </div>  
+               
               <blockquote class="quote_39823">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
               </blockquote>
@@ -313,9 +316,7 @@
           <div class="col-lg-4 col-md-6">
             
             <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
-              </div>  
+                
               <blockquote class="quote_39823">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
               </blockquote>
@@ -392,7 +393,31 @@
     <script src="js/aos.js"></script>
 
     <script src="js/main.js"></script>
-
+    <script>
+      if ('serviceWorker' in navigator) {
+        console.log("Will the service worker register?");
+        navigator.serviceWorker.register('service-worker.js')
+          .then(function(reg){
+            console.log("Yes, it did.");
+          }).catch(function(err) {
+            console.log("No it didn't. This happened: ", err)
+          });
+      }
+    </script>
+    <script src="service-worker.js">
+            // Service worker for Progressive Web App
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js', {
+                scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
+            }).then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+    </script>
   </body>
 
 </html>
