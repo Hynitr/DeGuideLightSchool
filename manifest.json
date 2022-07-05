@@ -11,12 +11,15 @@
     }
   ],
   "start_url": "./?v3&utm_source=web_app_manifest",
-  "background_color": "#ffffff",
-  "theme_color": "#01d28e",
-  "color": "#000000",
-  "display": "standalone",
-  "related_applications": [{
-    "platform": "web",
-    "url": "https://deguidelightschool.com.ng"
-  }]
+  "background_color": "#9F40FE",
+  "theme_color": "#9F40FE",
+  "color": "#fff",
+  "display": "minimal-ui",
+  "related_applications": [
+    {
+      "platform": "web",
+      "orientation": "portrait",
+      "url": "https://deguidelightschool.com.ng"
+    }
+  ]
 }
