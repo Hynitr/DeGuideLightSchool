@@ -30,6 +30,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="images/logo.png">
+    <link rel="manifest" href="manifest.json">
     <!-- <link type="image/x-icon" rel="shortcut icon" href="images/logo.png"> -->
   </head>
 
@@ -361,27 +362,36 @@
       if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
         navigator.serviceWorker.register('service-worker.js')
-          .then(function(reg){
-            console.log("Yes, it did.");
-          }).catch(function(err) {
-            console.log("No it didn't. This happened: ", err)
-          });
+        .then(function(reg){
+          console.log("Yes, it did.");
+        }).catch(function(err) {
+          console.log("No it didn't. This happened: ", err)
+        });
       }
-    </script>
-    <script src="service-worker.js">
-            // Service worker for Progressive Web App
+      </script>
+      <script src="service-worker.js">
+          // Service worker for Progressive Web App
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js', {
-                scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
-            }).then(function(registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
-                // registration failed :(
-                console.log('ServiceWorker registration failed: ', err);
-            });
+          navigator.serviceWorker.register('service-worker.js', {
+            scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
+          }).then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
         }
-    </script>
+      </script>
+      <script>
+      
+  window.addEventListener("online",  function(){
+      console.log("You are online!");
+  });
+  window.addEventListener("offline", function(){
+      console.log("Oh no, you lost your network connection.");
+  });
+      </script>
   </body>
 
 </html>
